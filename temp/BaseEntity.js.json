@@ -1,0 +1,74 @@
+{
+  "data": {
+    "_id": 0,
+    "properties": {
+      "createdAt": {
+        "name": "createdAt",
+        "kind": "scalar",
+        "type": "timestamptz",
+        "length": 6,
+        "defaultRaw": "now()",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "Date"
+      },
+      "updatedAt": {
+        "name": "updatedAt",
+        "kind": "scalar",
+        "type": "timestamptz",
+        "length": 6,
+        "defaultRaw": "now()",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "Date"
+      },
+      "createdById": {
+        "name": "createdById",
+        "kind": "scalar",
+        "type": "uuid",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "string",
+        "optional": true
+      },
+      "updatedById": {
+        "name": "updatedById",
+        "kind": "scalar",
+        "type": "uuid",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "string",
+        "optional": true
+      },
+      "isDeleted": {
+        "name": "isDeleted",
+        "kind": "scalar",
+        "type": "boolean",
+        "default": false,
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "boolean"
+      }
+    },
+    "primaryKeys": [],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "BaseEntity",
+    "path": "./dist/src/core/entities/base.entity.js",
+    "abstract": true,
+    "internal": true,
+    "constructorParams": [],
+    "toJsonParams": [],
+    "useCache": true
+  },
+  "origin": "./dist/src/core/entities/base.entity.js",
+  "hash": "92203e65724f041a592fe2ca66a4e478",
+  "version": "6.4.0"
+}

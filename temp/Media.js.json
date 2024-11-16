@@ -1,0 +1,75 @@
+{
+  "data": {
+    "_id": 4000,
+    "properties": {
+      "id": {
+        "name": "id",
+        "kind": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "array": false,
+        "runtimeType": "string"
+      },
+      "fileName": {
+        "name": "fileName",
+        "kind": "scalar",
+        "type": "text",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "string"
+      },
+      "fileSize": {
+        "name": "fileSize",
+        "kind": "scalar",
+        "type": "DECIMAL",
+        "precision": 2,
+        "length": 10,
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "number"
+      },
+      "fileUrl": {
+        "name": "fileUrl",
+        "kind": "scalar",
+        "type": "text",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "string"
+      },
+      "fileType": {
+        "name": "fileType",
+        "kind": "scalar",
+        "type": "text",
+        "getter": false,
+        "setter": false,
+        "array": false,
+        "runtimeType": "string"
+      }
+    },
+    "primaryKeys": [
+      "id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "Media",
+    "path": "./dist/src/core/entities/media.entity.js",
+    "collection": "media",
+    "name": "Media",
+    "abstract": false,
+    "internal": true,
+    "constructorParams": [],
+    "toJsonParams": [],
+    "extends": "BaseEntity",
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./dist/src/core/entities/media.entity.js",
+  "hash": "073db8796cc287bf702d5d5c04f00c53",
+  "version": "6.4.0"
+}
