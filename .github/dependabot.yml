@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+      time: '08:30'
+    commit-message:
+      prefix: 'npm'
+    labels:
+      - 'npm'
+      - 'dependencies'
+    open-pull-requests-limit: 4
+    reviewers:
+      - 'nguyentran-se'
