@@ -69,6 +69,6 @@
     "useCache": true
   },
   "origin": "./dist/src/core/entities/base.entity.js",
-  "hash": "92203e65724f041a592fe2ca66a4e478",
-  "version": "6.4.0"
+  "hash": "dd5442adaaeac9d84ec92afd8e158458",
+  "version": "6.4.2"
 }

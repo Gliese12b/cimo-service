@@ -1,18 +1,14 @@
 {
   "data": {
-    "_id": 1000,
+    "_id": 4000,
     "properties": {
       "id": {
         "name": "id",
         "kind": "scalar",
         "primary": true,
         "defaultRaw": "gen_random_uuid()",
-        "fieldNames": [
-          "id"
-        ],
-        "columnTypes": [
-          "uuid"
-        ],
+        "fieldNames": ["id"],
+        "columnTypes": ["uuid"],
         "type": "string",
         "runtimeType": "string",
         "array": false
@@ -23,9 +19,7 @@
         "length": 128,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "first_name"
-        ],
+        "fieldNames": ["first_name"],
         "type": "string",
         "array": false,
         "runtimeType": "string"
@@ -36,9 +30,7 @@
         "length": 128,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "last_name"
-        ],
+        "fieldNames": ["last_name"],
         "type": "string",
         "array": false,
         "runtimeType": "string"
@@ -49,9 +41,7 @@
         "length": 255,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "full_name"
-        ],
+        "fieldNames": ["full_name"],
         "type": "string",
         "array": false,
         "runtimeType": "string"
@@ -63,9 +53,7 @@
         "length": 128,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "middle_name"
-        ],
+        "fieldNames": ["middle_name"],
         "type": "string",
         "array": false,
         "runtimeType": "string",
@@ -77,9 +65,7 @@
         "nullable": true,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "alias"
-        ],
+        "fieldNames": ["alias"],
         "type": "string",
         "array": false,
         "runtimeType": "string",
@@ -92,9 +78,7 @@
         "unique": true,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "username"
-        ],
+        "fieldNames": ["username"],
         "type": "string",
         "array": false,
         "runtimeType": "string"
@@ -105,9 +89,7 @@
         "length": 512,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "password"
-        ],
+        "fieldNames": ["password"],
         "type": "string",
         "array": false,
         "runtimeType": "string"
@@ -119,18 +101,14 @@
         "length": 255,
         "getter": false,
         "setter": false,
-        "fieldNames": [
-          "email"
-        ],
+        "fieldNames": ["email"],
         "type": "string",
         "array": false,
         "runtimeType": "string",
         "optional": true
       }
     },
-    "primaryKeys": [
-      "id"
-    ],
+    "primaryKeys": ["id"],
     "filters": {},
     "hooks": {},
     "indexes": [],
@@ -149,6 +127,6 @@
     "collection": "user"
   },
   "origin": "./dist/src/modules/user/user.entity.js",
-  "hash": "2a1976ac39331e6570efbb551dbb6a49",
-  "version": "6.4.0"
+  "hash": "10a2da1db4fdf0376de1bfe10862cd43",
+  "version": "6.4.2"
 }

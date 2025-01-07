@@ -1,6 +1,6 @@
 {
   "data": {
-    "_id": 4000,
+    "_id": 2000,
     "properties": {
       "id": {
         "name": "id",
@@ -49,9 +49,7 @@
         "runtimeType": "string"
       }
     },
-    "primaryKeys": [
-      "id"
-    ],
+    "primaryKeys": ["id"],
     "filters": {},
     "hooks": {},
     "indexes": [],
@@ -70,6 +68,6 @@
     "simplePK": true
   },
   "origin": "./dist/src/core/entities/media.entity.js",
-  "hash": "073db8796cc287bf702d5d5c04f00c53",
-  "version": "6.4.0"
+  "hash": "370a4028dafe5763e59204a2d2af64fe",
+  "version": "6.4.2"
 }
