@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Function to convert kebab-case to PascalCase
+toPascalCase() {
+  echo "$1" | sed -r 's/(^|-)([a-z])/\U\2/g'
+}
+
+# Read user inputs
+read -p "User Case: " userCase
+read -p "Types (cmd,query): " types
+read -p "Module: " relativePath
+
+# Convert userCase to kebab-case and PascalCase
+kebabCase=$(echo "$userCase" | sed -E 's/([a-z])([A-Z])/\1-\2/g' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+pascalCase=$(toPascalCase "$userCase")
+
+# Navigate to the appropriate directory based on the types input
+case $types in
+  cmd)
+    targetPath="src/modules/$relativePath/commands"
+    suffix="command"
+    ;;
+  query)
+    targetPath="src/modules/$relativePath/queries"
+    suffix="query"
+
+    ;;
+  *)
+    echo "Invalid type. Please use 'cmd' or 'query'."
+    exit 1
+    ;;
+esac
+fileName="$kebabCase.$suffix"
+
+# mkdir -p "$targetPath/$kebabCase"
+cd "$targetPath" || exit
+
+# Create the required files
+touch "index.ts"
+touch "$fileName.ts"
+
+
+# Write to index.ts
+echo "export * from './$fileName';" > "index.ts"
+
+# Write to command.ts\
+pascalCaseSuffix=$(toPascalCase "$suffix")
+
+echo -e "import { I${pascalCaseSuffix} } from '@nestjs/cqrs';\n
+export class ${pascalCase}${pascalCaseSuffix} implements I${pascalCaseSuffix}  {
+    constructor(public readonly body: any) {}
+}" > "$fileName.ts"
+mkdir -p "handlers"
+cd "handlers" || exit
+
+touch "index.ts"
+touch "$kebabCase.handler.ts"
+
+
+echo -e "import { ${pascalCaseSuffix}Handler, I${pascalCaseSuffix}Handler } from '@nestjs/cqrs';
+import { ${pascalCase}${pascalCaseSuffix} } from '../${kebabCase}.${suffix}';
+
+@${pascalCaseSuffix}Handler(${pascalCase}${pascalCaseSuffix})
+export class ${pascalCase}Handler implements I${pascalCaseSuffix}Handler<
+  ${pascalCase}${pascalCaseSuffix}
+> {
+  constructor() {}
+
+  async execute(${suffix}: ${pascalCase}${pascalCaseSuffix}): Promise<any> {
+    
+  }
+}" > "$kebabCase.handler.ts"
+echo "export * from './$kebabCase.handler';" > "index.ts"
+
+
+echo "Files created successfully in $targetPath/$kebabCase."
