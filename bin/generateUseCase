@@ -41,7 +41,7 @@ touch "$fileName.ts"
 
 
 # Write to index.ts
-echo "export * from './$fileName';" > "index.ts"
+echo "export * from './$fileName';" >> "index.ts"
 
 # Write to command.ts\
 pascalCaseSuffix=$(toPascalCase "$suffix")
@@ -70,7 +70,7 @@ export class ${pascalCase}Handler implements I${pascalCaseSuffix}Handler<
     
   }
 }" > "$kebabCase.handler.ts"
-echo "export * from './$kebabCase.handler';" > "index.ts"
+echo "export * from './$kebabCase.handler';" >> "index.ts"
 
 
 echo "Files created successfully in $targetPath/$kebabCase."
