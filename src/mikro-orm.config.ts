@@ -42,7 +42,7 @@ async function main() {
   const command = process.argv.reverse()[0];
   let input: string;
 
-  if (command === 'mikro:migrate') {
+  if (['mikro:migrate', 'migration:create'].includes(command)) {
     while (!(input = await askQuestion('Name of migration: ')));
   }
 
@@ -54,10 +54,14 @@ async function main() {
     migrations: {
       tableName: '__mikro_migrations',
       fileName(timestamp, _name) {
-        const migrationName = input?.split(/\s+/).join('_') || _name;
+        const migrationName = input?.trim()?.split(/\s+/).join('_') || _name;
+        if (!migrationName?.trim()) {
+          logger.error('Migration name is required. If the error continues, please try the command\n pnpm rebuild');
+          throw new Error('Migration name is required. If the error continues, please try the command\n pnpm rebuild');
+        }
         const fileName = `${timestamp}_${migrationName}`;
         logger.info(`Create migration successfully: ${fileName}\n`);
-        logger.info('NOTE: To apply migration, please use command: pnpm mikro:migrate-up');
+        logger.info('To apply migration, please use the command: pnpm mikro:migrate-up');
         return fileName;
       },
       generator: CustomTsMigrationGenerator,
