@@ -36,6 +36,6 @@ import { Module } from '@nestjs/common';
         }) satisfies Options,
     }),
   ],
-  exports: [MikroOrmModule],
+  exports: [],
 })
 export class DatabaseModule {}
